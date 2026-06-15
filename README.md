@@ -37,22 +37,6 @@ Mostrar como a tecnologia pode transformar o agronegócio, promovendo práticas 
 - JavaScript
 - Chart.js
 
----
-
-## 🌍 Impacto
-
-Projeto educativo focado em sustentabilidade, inovação e conscientização ambiental no setor agrícola.
-
----
-
-## 💬 Frase do Projeto
-
 > “Quem cuida da terra hoje, lidera o mundo amanhã.”
 
----
 
-## 👨‍🌾 Status
-
-✔ Projeto finalizado para feira  
-✔ Interface interativa  
-✔ Simulação gamificada  

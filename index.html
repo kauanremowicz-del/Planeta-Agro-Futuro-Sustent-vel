@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planeta Agro: Futuro Sustentável</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <!-- Alternador de Turno (Dia/Noite) -->
+    <button class="btn-tema" id="toggle-tema" onclick="alternarTema()">🌙 Modo Noite</button>
+    
+    <!-- Drone em Órbita -->
+    <div class="drone-animado">🛰️</div>
+
+    <!-- Cabeçalho Oficial -->
+    <header>
+        <h1>🌍 Planeta Agro: Futuro Sustentável</h1>
+        <p>🌱 Conectando Agro, Tecnologia e Meio Ambiente</p>
+    </header>
+
+    <!-- Monitor do Ciclo de Crescimento da Plantação -->
+    <div class="painel-simulacao">
+        <div class="simulacao-header">
+            <span>🌾 Estado da Plantação: <strong id="txt-fase">Semeado</strong></span>
+            <span>Estação: <strong id="txt-clima">Ensolarado</strong></span>
+        </div>
+        <div class="barra-progresso-container">
+            <div class="barra-progresso" id="barra-crescimento"></div>
+        </div>
+    </div>
+
+    <!-- Painel de Indicadores de Recursos -->
+    <div class="status-grid">
+        <div class="card-status status-producao">
+            <h3>🌾 Produtividade</h3>
+            <div class="valor" id="val-prod">50</div>
+        </div>
+        <div class="card-status status-agua">
+            <h3>💧 Umidade Solo</h3>
+            <div class="valor" id="val-agua">50</div>
+        </div>
+        <div class="card-status status-biodiversidade">
+            <h3>🌳 Biodiversidade</h3>
+            <div class="valor" id="val-biod">50</div>
+        </div>
+        <div class="card-status status-tecnologia">
+            <h3>🚜 Tecnologia</h3>
+            <div class="valor" id="val-tec">50</div>
+        </div>
+        <div class="card-status status-drone">
+            <h3>🛰️ Drone Status</h3>
+            <div class="valor" id="val-drone">Inativo</div>
+        </div>
+    </div>
+
+    <!-- Painel de Tomada de Decisão (Ações) -->
+    <div class="painel-acoes">
+        <h2>Intervenções de Manejo Disponíveis:</h2>
+        <div class="botoes-acoes">
+            <button class="btn-acao" onclick="intervir('rotacao')">🌾 Rotação</button>
+            <button class="btn-acao" onclick="intervir('irrigacao')">💧 Irrigar</button>
+            <button class="btn-acao" onclick="intervir('solar')">☀️ Bioenergia</button>
+            <button class="btn-acao" onclick="intervir('preservar')">🌳 Reflorestar</button>
+            <button class="btn-acao btn-drone" onclick="intervir('drone')">🛰️ Drone Scan</button>
+        </div>
+    </div>
+
+    <!-- Monitoramento Global e Metas -->
+    <div class="info-grid">
+        <div class="painel-info">
+            <h2>🏆 Ranking Mundial</h2>
+            <p><strong>Nível:</strong> <span id="txt-ranking">Iniciante</span></p>
+            <p style="margin-top: 10px;"><strong>Pontos de Sustentabilidade:</strong> <span id="txt-pontos">0</span></p>
+        </div>
+
+        <div class="painel-info">
+            <h2>🎯 Requisitos do Certificado</h2>
+            <div class="item-missao" id="m1">⬜ Produtividade 150+</div>
+            <div class="item-missao" id="m2">⬜ Umidade Solo 120+</div>
+            <div class="item-missao" id="m3">⬜ Biodiversidade 120+</div>
+            <div class="item-missao" id="m4">⬜ Tecnologia 150+</div>
+        </div>
+    </div>
+
+    <!-- IA Diagnóstico em Tempo Real -->
+    <div class="ia-feedback">
+        <strong>🤖 IA Agrícola Mundial:</strong> 
+        <span id="ia-mensagem">Simulação conectada. O solo perde umidade progressivamente. Monitore os talhões e preserve o ecossistema!</span>
+    </div>
+
+    <!-- Emissão de Certificado Final -->
+    <button class="btn-certificado" id="btn-cert" disabled onclick="gerarCertificado()">🏅 Gerar Certificado Mundial</button>
+
+    <div class="certificado-box" id="certificado">
+        <h2>🏅 CERTIFICADO MUNDIAL DE SUSTENTABILIDADE</h2>
+        <p style="margin: 20px 0; font-size: 1.2rem;">Concedido à fazenda global:</p>
+        <h1 style="font-size: 2.5rem; letter-spacing: 2px; margin-bottom: 10px;">🌍 PLANETA AGRO</h1>
+        <p style="font-weight: bold; font-size: 1.1rem;">🚜 Tecnologia e sustentabilidade transformando o planeta.</p>
+        <hr style="border: 1px solid #854d0e; margin: 20px 0;">
+        <p style="font-style: italic; font-size: 1.2rem;">💡 “Quem cuida da terra hoje, lidera o mundo amanhã.”</p>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,230 @@
+/* Paleta Base: Modo Noite (Padrão) */
+:root {
+    --bg-principal: #0f172a;
+    --bg-card: #1e293b;
+    --texto: #f8fafc;
+    --texto-secundario: #94a3b8;
+    --verde: #10b981;
+    --azul: #3b82f6;
+    --laranja: #f59e0b;
+    --roxo: #8b5cf6;
+    --ciano: #06b6d4;
+    --ia-bg: #1e1b4b;
+    --ia-borda: #4338ca;
+}
+
+/* Paleta Alternativa: Modo Dia */
+[data-tema="light"] {
+    --bg-principal: #f1f5f9;
+    --bg-card: #ffffff;
+    --texto: #0f172a;
+    --texto-secundario: #475569;
+    --ia-bg: #e0e7ff;
+    --ia-borda: #818cf8;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+}
+
+body {
+    background-color: var(--bg-principal);
+    color: var(--texto);
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* Botão de Troca de Turno */
+.btn-tema {
+    position: absolute;
+    top: -10px;
+    right: 0;
+    background-color: var(--bg-card);
+    color: var(--texto);
+    border: 1px solid var(--texto-secundario);
+    padding: 8px 14px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.85rem;
+    z-index: 100;
+}
+.btn-tema:hover { transform: scale(1.05); }
+
+/* Banner do Cabeçalho com Imagem de Fundo Blend */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, rgba(6, 95, 70, 0.93), rgba(2, 44, 34, 0.96)), url('https://images.unsplash.com/photo-1625246333195-78d9c38ad451?auto=format&fit=crop&w=1200&q=80');
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    color: #f8fafc;
+}
+header p { color: #a7f3d0; font-weight: 500; letter-spacing: 0.5px; }
+
+/* Animação Circular do Drone */
+.drone-animado {
+    position: absolute;
+    font-size: 2rem;
+    z-index: 10;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: circular 12s linear infinite; 
+}
+@keyframes circular {
+    0% { transform: rotate(0deg) translateX(160px) rotate(0deg); }
+    100% { transform: rotate(360deg) translateX(160px) rotate(-360deg); }
+}
+
+/* Interface da Simulação */
+.painel-simulacao {
+    background-color: var(--bg-card);
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+.simulacao-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+}
+.barra-progresso-container {
+    background-color: #334155;
+    width: 100%;
+    height: 12px;
+    border-radius: 6px;
+    overflow: hidden;
+}
+.barra-progresso {
+    background: linear-gradient(90deg, #34d399, #10b981);
+    width: 0%;
+    height: 100%;
+    transition: width 1.5s linear;
+}
+
+/* Cards de Status */
+.status-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 15px;
+    margin-bottom: 25px;
+}
+.card-status {
+    background-color: var(--bg-card);
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+    border-left: 5px solid transparent;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.03);
+}
+.status-producao { border-color: var(--verde); }
+.status-agua { border-color: var(--azul); }
+.status-biodiversidade { border-color: var(--laranja); }
+.status-tecnologia { border-color: var(--roxo); }
+.status-drone { border-color: var(--ciano); }
+
+.card-status h3 { font-size: 0.9rem; color: var(--texto-secundario); margin-bottom: 5px; }
+.card-status .valor { font-size: 1.8rem; font-weight: bold; }
+
+/* Botões e Controle de Comandos */
+.painel-acoes {
+    background-color: var(--bg-card);
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+}
+.painel-acoes h2 { font-size: 1.2rem; margin-bottom: 15px; color: var(--texto-secundario); }
+.botoes-acoes { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 10px; }
+
+.btn-acao {
+    background-color: #334155;
+    color: #f8fafc;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: transform 0.1s, background-color 0.2s;
+}
+.btn-acao:hover { background-color: #475569; }
+.btn-acao:active { transform: scale(0.97); }
+[data-tema="light"] .btn-acao { background-color: #cbd5e1; color: #0f172a; }
+[data-tema="light"] .btn-acao:hover { background-color: #94a3b8; }
+
+.btn-drone { background-color: #164e63; color: #cffafe; }
+.btn-drone:hover { background-color: #155e75; }
+
+/* Blocos de Informação Inferiores */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 25px;
+}
+.painel-info {
+    background-color: var(--bg-card);
+    padding: 20px;
+    border-radius: 12px;
+}
+.painel-info h2 { font-size: 1.2rem; margin-bottom: 15px; border-bottom: 1px solid var(--texto-secundario); padding-bottom: 5px; }
+.item-missao { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.item-missao.concluida { text-decoration: line-through; color: var(--texto-secundario); }
+
+/* Feedback da IA */
+.ia-feedback {
+    background-color: var(--ia-bg);
+    border: 1px solid var(--ia-borda);
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    font-style: italic;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* Certificado */
+.btn-certificado {
+    width: 100%;
+    background: linear-gradient(90deg, #eab308, #ca8a04);
+    color: #000;
+    font-weight: bold;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+.btn-certificado:disabled { background: #475569; color: #94a3b8; cursor: not-allowed; box-shadow: none; }
+
+.certificado-box {
+    display: none;
+    background: radial-gradient(circle, #fef08a 0%, #ca8a04 100%);
+    color: #422006;
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    border: 8px double #854d0e;
+    margin-top: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
